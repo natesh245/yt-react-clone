@@ -16,8 +16,16 @@ function VideoCard(props) {
           />
         </div>
         <div className="video-card__desc-right">
-          <h2>{props.title}</h2>
-          <p className="video-card__channel">{props.channel}</p>
+          <h2>
+            {props.title.length > 35
+              ? props.title.substring(0, 35).concat("...")
+              : props.title}
+          </h2>
+          <p className="video-card__channel">
+            {props.channel.length >= 20
+              ? props.channel.substring(0, 20).concat("...")
+              : props.channel}
+          </p>
           <p className="video-card__views">
             {props.views} . {props.uploaded}
           </p>
