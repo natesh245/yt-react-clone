@@ -1,5 +1,8 @@
 import React from "react";
 import Header from "./Header/Header";
+import SideNav from "./SideNavBar/SideNav";
+
+import Home from "./Home/Home";
 
 import { BrowserRouter as Router, Switch, Link, Route } from "react-router-dom";
 
@@ -10,26 +13,9 @@ function App() {
     <Router>
       <div className="App">
         <Header />
+
         <div className="body-container">
-          <div className="sideNav">
-            <ul>
-              <li>
-                <Link to="/" className="Link">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/trending" className="Link">
-                  Trending
-                </Link>
-              </li>
-              <li>
-                <Link to="/subscription" className="Link">
-                  Subscriptions
-                </Link>
-              </li>
-            </ul>
-          </div>
+          <SideNav />
           <div className="container">
             <Switch>
               <Route
@@ -40,7 +26,17 @@ function App() {
                 path="/Subscription"
                 render={() => <div>Subscription</div>}
               ></Route>
-              <Route path="/" render={() => <div>Home</div>}></Route>
+              <Route path="/library" render={() => <div>Library</div>}></Route>
+              <Route path="/history" render={() => <div>History</div>}></Route>
+              <Route
+                path="/your-videos"
+                render={() => <div>Your Videos</div>}
+              ></Route>
+              <Route
+                path="/watch-later"
+                render={() => <div>watch Later</div>}
+              ></Route>
+              <Route path="/" component={Home}></Route>
             </Switch>
           </div>
         </div>

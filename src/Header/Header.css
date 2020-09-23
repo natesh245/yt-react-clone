@@ -1,9 +1,3 @@
-:root {
-  --yt-border-gray: rgb(206, 203, 203);
-  --yt-background-gray: rgb(240, 240, 240);
-  --yt-header-end-icons-color: rgba(0, 0, 0, 0.671);
-}
-
 .header {
   width: 100%;
   height: 4rem;
@@ -72,6 +66,7 @@
   justify-content: space-around;
   align-items: center;
   width: 250px;
+  margin-right: 1rem;
 }
 
 .header__end-icons {

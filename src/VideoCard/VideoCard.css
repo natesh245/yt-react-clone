@@ -1,0 +1,46 @@
+.video-card {
+  width: 250px;
+  height: 18rem;
+
+  /* display: flex;
+  flex-direction: column; */
+  overflow: hidden;
+}
+
+.video-card__image {
+  width: 100%;
+  height: 12rem;
+}
+
+.video-card__image img {
+  width: 100%;
+  height: inherit;
+  object-fit: cover;
+  filter: brightness(50%);
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  color: gray;
+}
+
+.video-card__desc {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.channel-image {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
+.video-card__desc-right {
+  margin-left: 1rem;
+}

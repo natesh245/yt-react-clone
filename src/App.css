@@ -1,35 +1,23 @@
-.sideNav {
-  height: 90vh;
-  width: 250px;
-
-  background-color: blue;
-  color: white;
-  font-size: 1rem;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-li {
-  padding: 1rem;
-}
-
-.Link {
-  color: white;
-  text-decoration: none;
-  padding: 2rem;
+:root {
+  --yt-border-gray: rgb(206, 203, 203);
+  --yt-background-gray: rgb(240, 240, 240);
+  --yt-header-end-icons-color: rgba(0, 0, 0, 0.671);
+  --yt-red-color: red;
+  --yt-container-body-color: rgb(250, 250, 250);
 }
 
 .body-container {
   display: flex;
+  width: 100%;
 }
 
 .container {
-  background-color: salmon;
-  color: white;
+  flex: 1;
+  background-color: var(--yt-container-body-color);
+  color: black;
   font-size: 2rem;
   height: 90vh;
 
-  width: 800px;
   overflow-x: hidden;
   overflow-y: scroll;
 }
