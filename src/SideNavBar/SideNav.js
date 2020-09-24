@@ -8,7 +8,7 @@ import HistoryIcon from "@material-ui/icons/History";
 import PlayCircleOutlineIcon from "@material-ui/icons/PlayCircleOutline";
 import WatchLaterIcon from "@material-ui/icons/WatchLater";
 
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function SideNav() {
   return (

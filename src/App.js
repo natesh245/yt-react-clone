@@ -3,8 +3,9 @@ import Header from "./Header/Header";
 import SideNav from "./SideNavBar/SideNav";
 
 import Home from "./Home/Home";
+import Trending from "./Trending/Trending";
 
-import { BrowserRouter as Router, Switch, Link, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.css";
 
@@ -18,10 +19,7 @@ function App() {
           <SideNav />
           <div className="container">
             <Switch>
-              <Route
-                path="/trending"
-                render={() => <div>Trending</div>}
-              ></Route>
+              <Route path="/trending" component={Trending}></Route>
               <Route
                 path="/Subscription"
                 render={() => <div>Subscription</div>}

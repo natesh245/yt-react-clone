@@ -1,7 +1,7 @@
 .side-nav {
   height: 90vh;
   width: 250px;
-  color: white;
+
   font-size: 1rem;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -33,7 +33,7 @@
 
 .side-nav__list-link {
   text-decoration: none;
-  color: black;
+  color: rgb(83, 83, 83);
 }
 
 .side-nav__icons {
@@ -42,7 +42,8 @@
 
 .side-nav__list-link.active {
   background-color: rgb(219, 216, 216);
-  font-weight: bold;
+  /* font-weight: bold; */
+  color: black;
 }
 
 .side-nav__list-link.active li .side-nav__icons {
