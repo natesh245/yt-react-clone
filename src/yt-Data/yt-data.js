@@ -536,13 +536,4 @@ export const ytVideoData = [
     thumbnail: "",
     avatar: "",
   },
-  {
-    title:
-      "Kokila Ben | First World Problems | Dialogue with Beats | Yashraj Mukhate | Gopi Bahu | Raashi",
-    channel: "Yashraj Mukhate",
-    views: "54M views",
-    upload: "1 month ago",
-    thumbnail: "",
-    avatar: "",
-  },
 ];

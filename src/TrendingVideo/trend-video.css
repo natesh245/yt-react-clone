@@ -3,6 +3,7 @@
   flex-direction: row;
   height: 11rem;
   margin-bottom: 1rem;
+  width: 100%;
 }
 
 .thumbnail-container {

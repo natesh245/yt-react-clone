@@ -11,7 +11,12 @@ function Header() {
   return (
     <div className="header">
       <div className="header__icon-logo">
-        <MenuIcon />
+        <MenuIcon
+          onClick={() => {
+            console.log("clicked");
+          }}
+        />
+
         <img
           src="https://logos-world.net/wp-content/uploads/2020/04/YouTube-Logo.png"
           alt="yt-logo"
