@@ -7,15 +7,11 @@ import VideoCallIcon from "@material-ui/icons/VideoCall";
 import AppsIcon from "@material-ui/icons/Apps";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 
-function Header() {
+function Header(props) {
   return (
     <div className="header">
       <div className="header__icon-logo">
-        <MenuIcon
-          onClick={() => {
-            console.log("clicked");
-          }}
-        />
+        <MenuIcon onClick={() => props.toggleHandler()} />
 
         <img
           src="https://logos-world.net/wp-content/uploads/2020/04/YouTube-Logo.png"
