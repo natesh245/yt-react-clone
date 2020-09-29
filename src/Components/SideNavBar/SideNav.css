@@ -20,7 +20,7 @@
 }
 
 .side-nav__list-item {
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   width: inherit;
   display: flex;
   justify-content: stretch;

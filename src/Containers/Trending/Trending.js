@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import TrendVideo from "./../TrendingVideo/trend-video";
+import TrendVideo from "../../Components/TrendingVideo/trend-video";
 import "./Trending.css";
 
-import { ytTrending } from "./../yt-Data/yt-trend-data";
+import { ytTrending } from "../../yt-Data/yt-trend-data";
 class Trending extends Component {
   render() {
     console.log("in render trending");

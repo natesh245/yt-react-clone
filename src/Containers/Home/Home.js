@@ -1,8 +1,8 @@
 import React from "react";
-import VideoCard from "./../VideoCard/VideoCard";
+import VideoCard from "../../Components/VideoCard/VideoCard";
 import "./Home.css";
 
-import { ytVideoData } from "./../yt-Data/yt-data";
+import { ytVideoData } from "../../yt-Data/yt-data";
 
 function Home(props) {
   return (

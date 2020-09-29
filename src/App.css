@@ -21,7 +21,7 @@ html {
   color: black;
   font-size: 2rem;
   height: 90vh;
-
+  border-top: 1px solid var(--yt-border-gray);
   overflow-x: hidden;
   overflow-y: scroll;
 }

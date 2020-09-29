@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "./Header/Header";
-import SideNav from "./SideNavBar/SideNav";
-import SideBar from "./SideBar/SideBar";
+import Header from "./Components/Header/Header";
+import SideNav from "./Components/SideNavBar/SideNav";
+import SideBar from "./Components/SideBar/SideBar";
+import Home from "./Containers/Home/Home";
 
-import Home from "./Home/Home";
-import Trending from "./Trending/Trending";
+import Trending from "./Containers/Trending/Trending";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
