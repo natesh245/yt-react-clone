@@ -19,7 +19,7 @@ function Header(props) {
           className="header__icon-logo-image"
         />
       </div>
-      <div className="header__search-container">
+      <form className="header__search-container">
         <input
           type="text"
           placeholder="Search"
@@ -28,7 +28,7 @@ function Header(props) {
         <div className="header__search-icon-container">
           <SearchIcon className="header__search-icon" />
         </div>
-      </div>
+      </form>
       <div className="header__end-container">
         <VideoCallIcon className="header__end-icons" />
         <AppsIcon className="header__end-icons" />

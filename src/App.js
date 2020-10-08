@@ -4,6 +4,8 @@ import SideNav from "./Components/SideNavBar/SideNav";
 import SideBar from "./Components/SideBar/SideBar";
 import Home from "./Containers/Home/Home";
 
+import axios from "axios";
+
 import Trending from "./Containers/Trending/Trending";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -15,9 +17,14 @@ class App extends React.Component {
     super();
     this.state = {
       showNav: true,
+      searchString: "",
     };
-    console.log(this.state);
+
     this.toggleNavBar = this.toggleNavBar.bind(this);
+
+    this.axios = axios.create({
+      baseURL: "https://www.googleapis.com/youtube/v3/",
+    });
   }
 
   toggleNavBar() {
@@ -66,6 +73,21 @@ class App extends React.Component {
         </div>
       </Router>
     );
+  }
+
+  componentDidMount() {
+    this.axios
+      .get("search", {
+        params: {
+          part: "snippet",
+          q: "traversy media",
+          maxResults: 25,
+          key: process.env.REACT_APP_YT_API_KEY,
+        },
+      })
+      .then((response) => {
+        console.log(response.data.items);
+      });
   }
 }
 
