@@ -2,13 +2,14 @@ import React from "react";
 import Header from "./Components/Header/Header";
 import SideNav from "./Components/SideNavBar/SideNav";
 import SideBar from "./Components/SideBar/SideBar";
-import Home from "./Containers/Home/Home";
+
+import Routes from "./Components/DiffRoutes/DiffRoutes";
+
+// import Search from "./Containers/Search/Search";
 
 import axios from "axios";
 
-import Trending from "./Containers/Trending/Trending";
-
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import "./App.css";
 
@@ -18,12 +19,22 @@ class App extends React.Component {
     this.state = {
       showNav: true,
       searchString: "",
+      searchArray: [],
     };
 
     this.toggleNavBar = this.toggleNavBar.bind(this);
+    this.SearchHandler = this.SearchHandler.bind(this);
 
     this.axios = axios.create({
       baseURL: "https://www.googleapis.com/youtube/v3/",
+    });
+  }
+
+  SearchHandler(event) {
+    event.preventDefault();
+    console.log(event.target.children[0].value);
+    this.setState({
+      searchString: event.target.children[0].value,
     });
   }
 
@@ -39,35 +50,15 @@ class App extends React.Component {
     return (
       <Router>
         <div className="App">
-          <Header toggleHandler={this.toggleNavBar} />
+          <Header
+            toggleHandler={this.toggleNavBar}
+            searchHandler={this.SearchHandler}
+          />
 
           <div className="body-container">
             {this.state.showNav ? <SideNav /> : <SideBar />}
             <div className="container">
-              <Switch>
-                <Route path="/trending" component={Trending}></Route>
-                <Route
-                  path="/Subscription"
-                  render={() => <div>Subscription</div>}
-                ></Route>
-                <Route
-                  path="/library"
-                  render={() => <div>Library</div>}
-                ></Route>
-                <Route
-                  path="/history"
-                  render={() => <div>History</div>}
-                ></Route>
-                <Route
-                  path="/your-videos"
-                  render={() => <div>Your Videos</div>}
-                ></Route>
-                <Route
-                  path="/watch-later"
-                  render={() => <div>watch Later</div>}
-                ></Route>
-                <Route path="/" component={Home}></Route>
-              </Switch>
+              <Routes searchArray={this.state.searchArray} />
             </div>
           </div>
         </div>
@@ -75,19 +66,22 @@ class App extends React.Component {
     );
   }
 
-  componentDidMount() {
-    this.axios
-      .get("search", {
-        params: {
-          part: "snippet",
-          q: "traversy media",
-          maxResults: 25,
-          key: process.env.REACT_APP_YT_API_KEY,
-        },
-      })
-      .then((response) => {
-        console.log(response.data.items);
-      });
+  componentDidUpdate(prevProps, prevstate) {
+    if (prevstate.searchString !== this.state.searchString) {
+      this.axios
+        .get("search", {
+          params: {
+            part: "snippet",
+            q: this.state.searchString,
+            maxResults: 25,
+            key: process.env.REACT_APP_YT_API_KEY,
+          },
+        })
+        .then((response) => {
+          console.log(response.data.items);
+          this.setState({ searchArray: response.data.items });
+        });
+    }
   }
 }
 

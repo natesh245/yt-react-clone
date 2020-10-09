@@ -19,7 +19,7 @@ function Header(props) {
           className="header__icon-logo-image"
         />
       </div>
-      <form className="header__search-container">
+      <form className="header__search-container" onSubmit={props.searchHandler}>
         <input
           type="text"
           placeholder="Search"
