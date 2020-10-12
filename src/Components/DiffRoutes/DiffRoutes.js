@@ -1,7 +1,7 @@
 import React from "react";
 import Home from "./../../Containers/Home/Home";
 import Trending from "./../../Containers/Trending/Trending";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 import Search from "./../../Containers/Search/Search";
 
@@ -12,6 +12,7 @@ function DiffRoutes(props) {
         <Route path="/search">
           <Search Array={props.searchArray} />
         </Route>
+        {props.redirect ? <Redirect to="/search" /> : null}
         <Route path="/trending">
           <Trending />
         </Route>

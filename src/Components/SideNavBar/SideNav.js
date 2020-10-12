@@ -10,17 +10,26 @@ import WatchLaterIcon from "@material-ui/icons/WatchLater";
 
 import { NavLink } from "react-router-dom";
 
-function SideNav() {
+function SideNav(props) {
   return (
     <div className="side-nav">
       <ul className="side-nav__link-list">
-        <NavLink exact to="/" className="side-nav__list-link">
+        <NavLink
+          exact
+          to="/"
+          className="side-nav__list-link"
+          onClick={props.setRedirectHandler}
+        >
           <li className="side-nav__list-item">
             <HomeIcon className="side-nav__icons" />
             Home
           </li>
         </NavLink>
-        <NavLink to="/trending" className="side-nav__list-link">
+        <NavLink
+          to="/trending"
+          className="side-nav__list-link"
+          onClick={props.setRedirectHandler}
+        >
           <li className="side-nav__list-item">
             <WhatshotIcon className="side-nav__icons" />
             Trending

@@ -8,7 +8,7 @@ function Search(props) {
         return (
           <SearchVideo
             key={arEl.snippet.title}
-            thumbnail={arEl.snippet.thumbnails.medium.url}
+            thumbnail={arEl.snippet.thumbnails.default.url}
             title={arEl.snippet.title}
             description={arEl.snippet.description}
           />

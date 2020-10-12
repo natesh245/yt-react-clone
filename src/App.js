@@ -20,14 +20,20 @@ class App extends React.Component {
       showNav: true,
       searchString: "",
       searchArray: [],
+      redirect: false,
     };
 
     this.toggleNavBar = this.toggleNavBar.bind(this);
     this.SearchHandler = this.SearchHandler.bind(this);
+    this.SetRedirect = this.SetRedirect.bind(this);
 
     this.axios = axios.create({
       baseURL: "https://www.googleapis.com/youtube/v3/",
     });
+  }
+
+  SetRedirect() {
+    this.setState({ redirect: false });
   }
 
   SearchHandler(event) {
@@ -35,6 +41,7 @@ class App extends React.Component {
     console.log(event.target.children[0].value);
     this.setState({
       searchString: event.target.children[0].value,
+      redirect: true,
     });
   }
 
@@ -56,9 +63,16 @@ class App extends React.Component {
           />
 
           <div className="body-container">
-            {this.state.showNav ? <SideNav /> : <SideBar />}
+            {this.state.showNav ? (
+              <SideNav setRedirectHandler={this.SetRedirect} />
+            ) : (
+              <SideBar setRedirectHandler={this.SetRedirect} />
+            )}
             <div className="container">
-              <Routes searchArray={this.state.searchArray} />
+              <Routes
+                searchArray={this.state.searchArray}
+                redirect={this.state.redirect}
+              />
             </div>
           </div>
         </div>

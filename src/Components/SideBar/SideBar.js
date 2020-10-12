@@ -8,17 +8,26 @@ import { NavLink } from "react-router-dom";
 
 import "./SideBar.css";
 
-function SideBar() {
+function SideBar(props) {
   return (
     <div className="side-bar">
       <ul className="side-bar__link-list">
-        <NavLink exact to="/" className="side-bar__list-link">
+        <NavLink
+          exact
+          to="/"
+          className="side-bar__list-link"
+          onClick={props.setRedirectHandler}
+        >
           <li className="side-bar__list-item">
             <HomeIcon className="side-bar__icons" />
             <div>Home</div>
           </li>
         </NavLink>
-        <NavLink to="/trending" className="side-bar__list-link">
+        <NavLink
+          to="/trending"
+          className="side-bar__list-link"
+          onClick={props.setRedirectHandler}
+        >
           <li className="side-bar__list-item">
             <WhatshotIcon className="side-bar__icons" />
             <div>Trending</div>
